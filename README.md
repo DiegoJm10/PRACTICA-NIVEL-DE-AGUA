@@ -64,4 +64,4 @@ Serial.println(distance);
 
 ## Conexión
 
-![](https://github.com/DiegoJm10/PracticaDHT/blob/main/New%20ESP32%20Project%20-%20Wokwi%20Simulator%20-%20Google%20Chrome%2008_06_2023%2011_10_20%20p.%20m.%20(2).png?raw=true)
+![](https://github.com/DiegoJm10/PRACTICA-NIVEL-DE-AGUA/blob/main/ESP32%20ULTRASONICO%20con%20parametros%20-%20Wokwi%20ESP32,%20STM32,%20Arduino%20Simulator%20-%20Google%20Chrome%2010_06_2023%2010_45_36%20a.%20m..png?raw=true)
