@@ -5,8 +5,10 @@
 // defines pins numbers
 const int trigPin = 4;
 const int echoPin = 15;
-const int buzzer = 5;
-const int ledPin = 2;
+const int led1 = 22;
+const int led2 = 21;
+const int led3 = 19;
+const int led4 = 18;
 
 // defines variables
 long duration;
@@ -17,8 +19,10 @@ int safetyDistance;
 void setup() {
 pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
 pinMode(echoPin, INPUT); // Sets the echoPin as an Input
-pinMode(buzzer, OUTPUT);
-pinMode(ledPin, OUTPUT);
+pinMode(led1, OUTPUT);
+pinMode(led2, OUTPUT);
+pinMode(led3, OUTPUT);
+pinMode(led4, OUTPUT);
 Serial.begin(9600); // Starts the serial communication
 }
 
@@ -40,25 +44,32 @@ duration = pulseIn(echoPin, HIGH);
 distance= duration*0.034/2;
 
 safetyDistance = distance;
-if (safetyDistance>5 && safetyDistance<9)
+if (safetyDistance>=2 && safetyDistance<=5)
 {
-  digitalWrite(buzzer, LOW);
-  digitalWrite(ledPin, HIGH);
+  digitalWrite(led1, HIGH);
+  digitalWrite(led2, LOW);
+  digitalWrite(led3, LOW);
+  digitalWrite(led4, LOW);
 }
-else if(safetyDistance>10 ) 
+else if(safetyDistance>=5 && safetyDistance<=10) 
 {
-  digitalWrite(buzzer, HIGH);
-  digitalWrite(ledPin, HIGH);
+  digitalWrite(led1, HIGH);
+  digitalWrite(led2, HIGH);
+  digitalWrite(led3, LOW);
+  digitalWrite(led4, LOW);
 }
 else
 {
-  digitalWrite(buzzer, LOW);
-  digitalWrite(ledPin, LOW);
+ digitalWrite(led1,  LOW);
+  digitalWrite(led2, LOW);
+  digitalWrite(led3, LOW);
+  digitalWrite(led4, LOW);
 }
 
 // Prints the distance on the Serial Monitor
 Serial.print("Distance: ");
 Serial.println(distance);
+delay (2000);
 }
 ```
 
